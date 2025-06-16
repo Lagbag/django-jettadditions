@@ -5,11 +5,4 @@ Django Jettadditions is a reusable Django application for user authentication, p
 
 Installation
 ------------
-Install using pip: `pip install jettadditions`
-
-Add 'django_jettadditions' to your INSTALLED_APPS in settings.py:
-```python
-INSTALLED_APPS = [
-    ...
-    'django_jettadditions',
-]
+Install using pip: `pip install git+https://github.com/Lagbag/django-jettadditions.git`
