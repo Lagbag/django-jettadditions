@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Главная</title>
+    <link rel="stylesheet" href="{% static 'django_jettadditions/css/bootstrap.min.css' %}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Добро пожаловать</h1>
+        {% if user.is_authenticated %}
+            {% if user.role == 'admin' %}
+                <a href="{% url 'admin_panel' %}" class="btn btn-primary">Админ-панель</a>
+            {% endif %}
+            <a href="{% url 'validate' %}" class="btn btn-secondary">Валидация</a>
+            <a href="{% url 'change_password' %}" class="btn btn-info">Смена пароля</a>
+            <a href="{% url 'login' %}" class="btn btn-outline-primary">Выйти</a>
+        {% else %}
+            <a href="{% url 'login' %}" class="btn btn-primary">Войти</a>
+            <a href="{% url 'validate' %}" class="btn btn-secondary">Валидация</a>
+        {% endif %}
+    </div>
+</body>
+</html>

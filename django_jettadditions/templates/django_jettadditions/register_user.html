@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Смена пароля</title>
+    <link rel="stylesheet" href="{% static 'django_jettadditions/css/bootstrap.min.css' %}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Регистрация пользователя</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Зарегистрировать</button>
+            <a href="{% url 'admin_panel' %}" class="btn btn-secondary">Назад</a>
+        </form>
+        {% if error %}
+            <p class="text-danger">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

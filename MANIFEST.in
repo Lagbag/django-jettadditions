@@ -1,0 +1,4 @@
+include README.rst
+include LICENSE
+recursive-include django_jettadditions/templates *.html
+recursive-include django_jettadditions/static *.ico

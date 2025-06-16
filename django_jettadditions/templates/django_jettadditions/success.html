@@ -1,0 +1,14 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Успех</title>
+    <link rel="stylesheet" href="{% static 'django_jettadditions/css/bootstrap.min.css' %}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>{{ message }}</h1>
+        <a href="{% url 'home' %}" class="btn btn-primary">На главную</a>
+    </div>
+</body>
+</html>

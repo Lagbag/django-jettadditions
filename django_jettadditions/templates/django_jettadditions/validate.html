@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Валидация данных</title>
+    <link rel="stylesheet" href="{% static 'django_jettadditions/css/bootstrap.min.css' %}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Валидация данных</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="phone" value="{{ phone|default_if_none:'' }}" class="form-control" readonly>
+            <button type="submit" name="get_data" class="btn btn-primary mt-2">Получить данные</button>
+            <button type="submit" name="send_result" class="btn btn-success mt-2">Отправить результат</button>
+            <a href="{% url 'home' %}" class="btn btn-secondary mt-2">На главную</a>
+        </form>
+        {% if result %}
+            <p class="text-success">{{ result }}</p>
+        {% endif %}
+        {% if error %}
+            <p class="text-danger">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
